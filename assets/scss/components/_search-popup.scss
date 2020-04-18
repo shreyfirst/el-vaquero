@@ -1,0 +1,76 @@
+.search-popup {
+	position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+	background: $white;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.1s ease-in-out;
+    z-index: -2;
+    overflow-y: scroll;
+	&.visible {
+		opacity: 1;
+        visibility: visible;
+        z-index: 1100;
+	}
+	.close-button {
+		position: absolute;
+		right: 16px;
+		top: 16px;
+		cursor: pointer;
+		z-index: 999;
+		transition: all 0.2s ease-in-out;
+		svg {
+			width: 24px;
+            height: 24px;
+			color: $color-dark;
+			&:hover {
+				color: $color-normal;
+			}
+		}
+	}
+	.popup-inner {
+		max-width: 700px;
+		margin-top: 70px;
+		form {
+			position: relative;
+			input {
+				border: none;
+				border-bottom: 2px solid $color-light;
+				padding-left: 0px;
+				font-size: 1.5rem;
+				&:focus {
+					border-bottom: 2px solid $color-normal;
+				}
+			}
+		}
+	}
+	#search-results {
+		margin: 35px 0px;
+		.result-item {
+			a {
+				transition: all 0.15s;
+				padding: 14px 0px;
+                display: block;
+                .title {
+					font-size: 1.125rem;
+                    font-weight: 600;
+                    color: $color-dark;
+					margin-bottom: 4px;
+					transition: color 0.3s ease;
+                }
+                .date {
+                    color: $color-normal;
+                    font-size: 0.875rem;
+                }
+                &:hover {
+                    .title {
+                        color: $color-normal;
+                    }
+                }
+			}
+		}
+	}
+}

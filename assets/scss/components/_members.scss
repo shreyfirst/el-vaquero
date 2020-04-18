@@ -1,0 +1,190 @@
+.members-form, .alternate-link {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.loading-spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid;
+    border-bottom-color: transparent;
+    display: inline-block;
+    border-radius: 50%;
+    animation: spin 1.2s linear infinite;
+    margin-right: 8px;
+    margin-bottom: -2px;
+}
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+.members-form, .subscribe-form {
+	.loading-spinner {
+		display: none;
+	}
+	&.loading {
+		.loading-spinner {
+			display: inline-block;
+		}
+	}
+}
+.message-success, .message-error {
+	display: none;
+	color: white;
+	padding: 4px 16px;
+	border-radius: 4px;
+    margin-bottom: 16px;
+    font-family: $sans-serif;
+    font-size: 1rem;
+}
+.message-success {
+	background-color: $success;
+}
+.message-error {
+	background-color: $error;
+}
+.loading {
+	.message-loading {
+		display: inline-block;
+	}
+}
+.success {
+	.message-success {
+		display: inline-block;
+	}
+}
+.error {
+	.message-error {
+		display: inline-block;
+	}
+}
+.alternate-link {
+    font-family: $sans-serif;
+}
+.pricing-table-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-left: -15px;
+	margin-right: -15px;
+}
+.pricing-table {
+	display: flex;
+	flex: 1 0 300px;
+	flex-direction: column;
+	border-radius: 2px;
+	overflow: hidden;
+	margin: 0px 15px 30px 15px;
+	transition: transform 0.2s;
+	max-width: 350px;
+}
+.pricing-table .pricing-table-title {
+	margin-top: 0px;
+}
+.pricing-table .table-header {
+	background-color: $color-dark;
+	color: #ffffff;
+	padding: 30px;
+	border-radius: 2px 2px 0px 0px;
+}
+.pricing-table .pricing-table-title {
+	color: #ffffff;
+	text-transform: uppercase;
+	margin-bottom: 16px;
+	font-size: 1.5rem;
+}
+.pricing-table .price .currency {
+	font-size: 3rem;
+}
+.pricing-table .price .value {
+	font-size: 3rem;
+}
+.pricing-table .price .duration {
+	font-size: 1.125rem;
+}
+.pricing-table .table-details {
+	padding: 30px 30px 30px 30px;
+	margin-bottom: 0;
+	list-style-type: none;
+	flex-grow: 1;
+	font-size: 16px;
+	border-left: 1px solid $border-color;
+	border-right: 1px solid $border-color;
+}
+.pricing-table .table-details li {
+	margin-bottom: 12px;
+	color: #363636;
+	position: relative;
+    padding-left: 20px;
+    font-family: $serif;
+}
+.pricing-table .table-details li svg {
+	display: inline-block;
+	color: $color-dark;
+	margin-right: 8px;
+	position: absolute;
+	left: 0;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+}
+.pricing-table .table-footer {
+	padding: 0px 30px 30px 30px;
+	border-width: 0px 1px 1px 1px;
+	border-color: $border-color;
+	border-style: solid;
+	border-radius: 0px 0px 2px 2px;
+}
+.notification {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 999;
+	background-color: $success;
+	color: $white;
+	font-size: 1.125rem;
+	padding: 16px 56px;
+	visibility: hidden;
+	transform: translateY(-150%);
+	transition: all .25s ease-in-out .3s;
+	a {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	.close-icon {
+		position: absolute;
+		top: 14px;
+		right: 24px;
+		color: $white;
+		font-size: 1.25rem;
+	}
+}
+.subscribe-success .notification-subscribe {
+    visibility: visible;
+    transform: translateY(0);
+}
+.signup-success .notification-signup {
+    visibility: visible;
+    transform: translateY(0);
+}
+.signin-success .notification-signin {
+    visibility: visible;
+    transform: translateY(0);
+}
+.checkout-success .notification-checkout {
+    visibility: visible;
+    transform: translateY(0);
+}
+.notification.closed {
+    visibility: hidden;
+    transform: translateY(-150%);
+    transition: all 0.25s ease-in-out 0s;
+}

@@ -1,0 +1,164 @@
+.site-header {
+    .header-wrapper {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .text-logo {
+        font-family: $serif;
+        font-size: 3rem;
+        line-height: 1.2;
+        font-weight: 700;
+        color: $color-dark;
+        text-transform: uppercase;
+        &:hover {
+            color: $color-dark;
+        }
+    }
+    .image-logo {
+        img {
+            max-width: 100%;
+        }
+    }
+    .site-description {
+        font-size: 1.125rem;
+    }
+    .navbar-inner {
+        flex: 0 0 100%;
+        border-top: 4px solid $color-dark;
+        border-bottom: 4px solid $color-dark;
+        height: 56px;
+        justify-content: space-between;
+        .menu-button, .search-button {
+            width: 20px;
+            height: 20px;
+            margin-top: 12px;
+            svg {
+                color: $color-dark;
+                cursor: pointer;
+                transition: (all 0.25s);
+                &:hover {
+                    color: $color-normal;
+                }
+            }
+        }
+        .menu-button {
+            margin-left: 8px;
+        }
+        .search-button {
+            margin-right: 8px;
+        }
+        .main-menu {
+            font-weight: 700;
+            flex-direction: row;
+            li {
+                margin: 0px 10px;
+                a {
+                    color: $color-dark;
+                    &:hover {
+                        color: $color-normal;
+                    }
+                }
+                &.current-menu-item {
+                    a {
+                        color: $color-normal;
+                    }
+                }
+            }
+        }
+    }
+    .fixed-nav-wrap {
+        position: fixed;
+        width: 100%;
+        top: 0px;
+        left: 0;
+        z-index: 9;
+        background-color: $white;
+        transition: transform 0.3s ease-in-out;
+        transform: translate3d(0, -100%, 0);
+        &.show {
+            transform: translate3d(0, 0, 0);
+        }
+        .site-navbar-wrap {
+            border-top: 4px solid $color-dark;
+            border-bottom: 4px solid $color-dark;
+            .navbar-inner {
+                border: none;
+                height: 48px;
+            }
+        }
+    }
+}
+.mobile-menu{
+	background: $white;
+	position: fixed;
+	top: 0;
+	left: -260px;
+	width: 260px;
+	height: 100%;
+	overflow-y: auto;
+	z-index: 1060;
+	transition: left 0.3s;
+	ul {
+		list-style: none;
+		padding: 0;
+		margin-top: 16px;
+		> li {
+            line-height: 2.5rem;
+            font-weight: 600;
+			position: relative;
+			a {
+				padding:  0px 16px 0px 32px;
+				display: block;
+				color: $color-dark;
+				transition: all 0.2s;
+				&:hover, &:focus {
+					color: $color-normal;
+				}
+			}
+			&.current-menu-item {
+				a {
+					color: $color-normal;
+				}
+			}
+		}
+	}
+}
+.backdrop {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 1050;
+	background: rgba($black, 0.9);
+	opacity: 0;
+	visibility: hidden;
+	cursor: pointer;
+	transition: all 0.3s;
+	.menu-close {
+		position: absolute;
+		left: 0px;
+		top: 15px;
+		width: 24px;
+		line-height: 24px;
+		transition: all 0.3s;
+		color: $white;
+		border-radius: 50%;
+	}
+}
+.mobile-menu-opened {
+	.mobile-menu {
+		left: 0px;
+	}
+	.backdrop {
+		opacity: 1;
+		visibility: visible;
+		.menu-close {
+            left: 275px;
+            svg {
+                height: 20px;
+                width: 20px;
+            }
+		}
+	}
+}
