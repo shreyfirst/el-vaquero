@@ -1,7 +1,6 @@
 {
-  "name": "world-times",
+  "name": "el-vaquero",
   "description": "",
-  "demo": "http://world-times.gbjsolution.com",
   "version": "2.0.0",
   "engines": {
     "ghost": ">=3.0.0",
@@ -12,9 +11,9 @@
     "mobile": "assets/screenshot-mobile.jpg"
   },
   "author": {
-    "name": "GBJ solution",
-    "email": "gbjsolution@gmail.com",
-    "url": "http://gbjsolution.com"
+    "name": "x",
+    "email": "x",
+    "url": "x"
   },
   "gpm": {
     "type": "theme",
